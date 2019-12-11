@@ -1,4 +1,15 @@
 body{
-  background-color: lightblue; 
+  font-family: sans-serif;
+}
+nav{
+  ul{
+    display: flex;
+  }
+  li{list-style-type: none}
+  a{
+    text-decoration: none;
+    color: green;
+    // font:
 
+  }
 }
