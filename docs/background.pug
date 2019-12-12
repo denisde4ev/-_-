@@ -1,0 +1,51 @@
+-
+  void function(boo){'use strict';
+    let url,color,icon;
+    if(boo&&Math.random()<.2 &&1){
+      color=
+        'aqua,black,blue,fuchsia,gray,green,lime,maroon,navy,olive,purple,red,silver,teal,white,and yellow'
+        .split`,`[
+          Math.random()*16|0
+        ]
+      ;
+      url=(`https://source.unsplash.com/1920x1080/?+${color}+?+background+?`)
+    }else{
+      [url,color,icon]=[
+        ["15/leaf.JPG",'#869C5F','🍃'],// 0
+        ["photo-1500286066899-ce3c231247cb",'#D7D4DD','🌲'],//1
+        ["photo-1487029413235-e3f7a0e8e140",'#E551B3','🍥'],//2
+        ["photo-1513151233558-d860c5398176",'#1E4A52','🎉'],//3
+        ["photo-1458682625221-3a45f8a844c7",'##5B6867','🏠'],//4
+        ["photo-1465326718387-85450d5f1510",'#634B5F','🌺'],//5
+        ["photo-1473277087567-8e0937304e17",'#E58E53','⛰️'],//6
+        ["photo-1469733881637-10c8de93222c",'#006B00','🌿'],//7
+        ["photo-1489189642444-0709966aec44",'#810C00','🌋'],//8
+      ][
+        Math.random()*9|0
+        // 2
+      ];
+      url=`https://images.unsplash.com/${url}?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=1080&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=1920`;
+    }
+    let css = `:root{--background: url('${url}');--background-color:${color}}`;
+
+    if(boo){
+      let style = document.createElement('style');
+      style.innerHTML=css;
+      let meta = document.createElement('meta');
+      meta.name="theme-color"
+      meta.content=color;
+      let title = document.createElement('title');
+      title.innerText=
+        (icon&&navigator.userAgent.includes('Firefox/')?icon+' ':'')
+        +
+        '-_-'
+      ;
+     
+      document.head.append(style);
+      document.head.append(meta);
+      document.head.append(title);
+    }else{
+     return background={css,color,icon}
+    }
+  }(typeof document!=='undefined')
+//- valid pug and user script 

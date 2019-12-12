@@ -1,18 +1,32 @@
 doctype html
 html
   head
-    title -_-
+      
+    - var background;
+    // if server site or user side randomize background
+    if 0
+      include ../docs/background
+      style!= background.css
+      meta(name="theme-color" content=background.color)
+      title= '-_- '+(background.icon||'')
+    else
+      script(type="text/javascript" src="./background.pug")
+    
+    link(rel="icon" href="./favicon.ico")
     link(rel='stylesheet',type='text/css',href='./style.css')
-    link(rel="icon" type="image/jpg" href="./favicon.jpg")
   body
-    nav
-      -
-        var navobj={
-          Home:'index.html',
-          Galery:'galery.html',
-          About:'about.html',
-        }
-      ul.navlinks
-        for v,k in navobj
-          li: a(href=v)= k
-        
+    .site
+      nav
+        logo asd 
+        -
+          var navobj={
+            Home:'index.html',
+            Galery:'galery.html',
+            About:'about.html',
+          }
+        ul.navlinks
+          for v,k in navobj
+            li: a(href=v)= k
+      
+      main
+        span asddas

@@ -1,0 +1,19 @@
+::-webkit-scrollbar {
+  width: 0.5em;
+  height: 0.5em;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--background-color);
+}
+
+::-webkit-scrollbar-track {
+  background: gray;
+}
+
+body {
+  scrollbar-face-color: var(--background-color);
+  scrollbar-track-color: gray;
+}
+
+/*# sourceMappingURL=scrollbar.css.map */

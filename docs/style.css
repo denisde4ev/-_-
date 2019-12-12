@@ -1,1 +1,60 @@
-body{font-family:sans-serif}nav ul{display:flex}nav li{list-style-type:none}nav a{text-decoration:none;color:green}/*# sourceMappingURL=style.css.map */
+@import url("./scrollbar.css");
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.site::before {
+  content: "";
+  background-image: var(--background);
+  background-color: var(--background-color);
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: fixed;
+  z-index: -2;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.site {
+  font-family: sans-serif;
+}
+
+nav {
+  backdrop-filter: blur(10px);
+  min-height: 4em;
+  background-color: #5559;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0 0 15px 15px;
+  padding-left: 21.5px;
+  padding-right: 21.5px;
+  color: green;
+}
+nav ul {
+  display: flex;
+}
+nav li {
+  list-style-type: none;
+}
+nav a {
+  text-decoration: none;
+}
+
+main {
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #5559;
+  backdrop-filter: blur(10px);
+  min-width: 400px;
+  width: calc(30% + 400px);
+  margin: 0 auto;
+  margin-top: 25vh;
+  height: 100vh;
+}
+
+/*# sourceMappingURL=style.css.map */
