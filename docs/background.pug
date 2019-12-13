@@ -24,7 +24,16 @@
         Math.random()*9|0
         // 2
       ];
-      url=`https://images.unsplash.com/${url}?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=1080&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=1920`;
+      url=
+        `https://images.unsplash.com/${url}?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=${
+          (typeof innerHeight==='number'?innerHeight*1.1:480)  
+          // *1.1 because phone can hide chrome bar and pc can go F11
+          // inner height and width can not be trust
+        }&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=`+
+          (typeof innerWidth==='number'?innerWidth:720)
+          
+          
+        ;
     }
     let css = `:root{--background: url('${url}');--background-color:${color}}`;
 

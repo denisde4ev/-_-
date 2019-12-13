@@ -2,45 +2,17 @@
 
 @import url("./scrollbar.css");
 
-
-// @mixin bgblur {
-//   content: '';
-//
-//   background-image: var(--background);
-//   background-color: var(--background-color);
-//   background-position: center;
-//   background-repeat: no-repeat;
-//   background-size: cover;
-//
-//   // filter: blur(5px);
-//
-//
-//   z-index: -20;
-//   position: fixed;
-//   top: 0;
-//   left: 0;
-//   width: 100%;
-//   height: 100%;
-//   margin: -1%;
-//   // box-sizing: border-box;
-//   background-repeat: no-repeat;
-//   filter: blur(10px);
-//   transform: scale(1.1);
-//   overflow: hidden;
-//
-// }
-
-
-// .site::before{
-//   // @include bgblur;
-//   filter: none;
-// }
+::-moz-selection,::selection {
+  // color: red;
+  background: var(--background-color);
+}
 
 .site::before{
   content: '';
-  background-image: var(--background);
-  background-color: var(--background-color);
-  background-position: center bottom;
+  background: var(--background) var(--background-color);
+  // background-image: var(--background);
+  // background-color: var(--background-color);
+  background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
   // min-height: 100vh;
@@ -49,13 +21,19 @@
   // overflow: hidden;
 
   position: fixed;
+  height: 100%;
+  width: 100%;
   z-index: -2;
-  top:0;
-  right:0;
-  left:0;
   bottom:0;
+  left:0;
+  right:0;
+  top:0;
 
+  background-image: var(--background);
+  position: fixed;
 }
+
+// body {height: 400vh}
 .site{
 
 
@@ -67,8 +45,12 @@
 
 $blur:10px;
 
-nav{
+nav,main{
   backdrop-filter: blur($blur);
+  // a:ss;
+}
+
+nav{
 
   min-height: 4em;
   background-color: #5559;
@@ -76,10 +58,10 @@ nav{
   justify-content:  space-between;
   align-items: center;
 
-  $r: 15px;
+  $r: 1rem;
   border-radius: 0 0 $r $r;
-  padding-left: $r*1.1+5px;
-  padding-right: $r*1.1+5px;
+  padding-left: $r*1.1+5rem;
+  padding-right: $r*1.1+5rem;
 
 
 
@@ -92,17 +74,14 @@ nav{
     text-decoration: none;
     // font:
   }
-  color: green;
 }
 
 main{
-  $r:10px;
+  $r:1rem;
   border-radius: $r;
   padding: $r;
   background-color: #5559;
 
-
-  backdrop-filter: blur($blur);
 
   min-width: 400px;
   width: calc(30% + 400px);
@@ -110,7 +89,3 @@ main{
   margin-top: 25vh;
   height:100vh;
 }
-// main::before{
-//   @include bgblur;
-//   overflow: hidden;
-// }

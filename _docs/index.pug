@@ -3,17 +3,19 @@ html
   head
       
     - var background;
-    // if server site or user side randomize background
+    //- if server site or user side randomize background
     if 0
       include ../docs/background
       style!= background.css
-      meta(name="theme-color" content=background.color)
+      meta(name='theme-color',content=background.color)
       title= '-_- '+(background.icon||'')
     else
-      script(type="text/javascript" src="./background.pug")
+      script(type='text/javascript',src='./background.pug')
     
-    link(rel="icon" href="./favicon.ico")
+    link(rel='icon',href='./favicon.ico')
     link(rel='stylesheet',type='text/css',href='./style.css')
+    meta(name='viewport',content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
+    meta(charset='UTF-8')
   body
     .site
       nav
