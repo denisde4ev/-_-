@@ -44,11 +44,17 @@ nav {
   padding-left: 6.1rem;
   padding-right: 6.1rem;
 }
+nav > span {
+  font-size: 40px;
+  position: relative;
+  top: -10px;
+}
 nav ul {
   display: flex;
 }
 nav li {
   list-style-type: none;
+  padding: 1em;
 }
 nav a {
   text-decoration: none;
@@ -58,10 +64,12 @@ main {
   border-radius: 1rem;
   padding: 1rem;
   background-color: #5559;
-  min-width: 400px;
-  width: calc(30% + 400px);
+  min-width: 320px;
+  width: calc(50% + 320px * .7);
+  box-sizing: border-box;
   margin: 0 auto;
   margin-top: 25vh;
+  margin-bottom: 10px;
   height: 100vh;
 }
 

@@ -1,0 +1,3 @@
+#!/bin/sh
+pug -w ./_docs -o ./docs &
+sass --watch ./_docs:./docs --style compressed

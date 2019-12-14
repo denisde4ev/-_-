@@ -35,9 +35,6 @@
 
 // body {height: 400vh}
 .site{
-
-
-
   font-family: sans-serif;
 }
 
@@ -45,12 +42,16 @@
 
 $blur:10px;
 
-nav,main{
+nav, main{
   backdrop-filter: blur($blur);
-  // a:ss;
 }
 
 nav{
+  >span{
+    font-size: 40px;
+    position: relative;
+    top: -10px;
+  }
 
   min-height: 4em;
   background-color: #5559;
@@ -65,11 +66,9 @@ nav{
 
 
 
-  ul{
-    display: flex;
-  }
+  ul{display:flex;}
 
-  li{list-style-type: none}
+  li{list-style-type:none;padding:1em}
   a{
     text-decoration: none;
     // font:
@@ -82,10 +81,11 @@ main{
   padding: $r;
   background-color: #5559;
 
-
-  min-width: 400px;
-  width: calc(30% + 400px);
+  min-width: 320px;
+  width: calc(50% + 320px * .7);
+  box-sizing: border-box;
   margin: 0 auto;
   margin-top: 25vh;
-  height:100vh;
+  margin-bottom: 10px;
+  height: 100vh;
 }

@@ -1,0 +1,39 @@
+doctype html
+html
+  head
+      
+    - var background
+    //- if server site or user side randomize background
+    if 1
+      include ../docs/background
+      style!= background.css
+      meta(name='theme-color',content=background.color)
+      //- title= '-_-'+(background.icon?` ${background.icon} `:' ')
+      title
+        block title
+          | #{background.icon?` ${background.icon} `:''}
+          
+    else
+      script(type='text/javascript',src='./background.pug')
+      title -_-
+      noscript
+        style body{background-color:black;color:white}
+    
+    link(rel='icon',href='./favicon.ico')
+    link(rel='stylesheet',type='text/css',href='./style.css')
+    meta(name='viewport',content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
+    meta(charset='UTF-8')
+  body
+    .site
+      nav
+        span -_- 
+        -
+          var navobj={
+            Home:'index.html',
+            Galery:'galery.html',
+            About:'about.html',
+          }
+        ul.navlinks
+          for v,k in navobj
+            li: a(href=v)= k
+      main: block main

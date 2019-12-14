@@ -26,13 +26,13 @@
       ];
       url=
         `https://images.unsplash.com/${url}?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=${
-          (typeof innerHeight==='number'?innerHeight*1.1:480)  
+          (typeof innerHeight==='number'?innerHeight*1.1:480)
           // *1.1 because phone can hide chrome bar and pc can go F11
           // inner height and width can not be trust
         }&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=`+
           (typeof innerWidth==='number'?innerWidth:720)
-          
-          
+
+
         ;
     }
     let css = `:root{--background: url('${url}');--background-color:${color}}`;
@@ -44,12 +44,11 @@
       meta.name="theme-color"
       meta.content=color;
       let title = document.createElement('title');
-      title.innerText=
-        (icon&&navigator.userAgent.includes('Firefox/')?icon+' ':'')
-        +
-        '-_-'
+      
+      if (icon&&navigator.userAgent.includes('Firefox/'))
+        title.innerText+=' '+icon
       ;
-     
+
       document.head.append(style);
       document.head.append(meta);
       document.head.append(title);
@@ -57,4 +56,4 @@
      return background={css,color,icon}
     }
   }(typeof document!=='undefined')
-//- valid pug and user script 
+//- valid pug and user script
