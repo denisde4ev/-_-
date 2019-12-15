@@ -44,16 +44,13 @@
       meta.name="theme-color"
       meta.content=color;
       let title = document.createElement('title');
-      
-      if (icon&&navigator.userAgent.includes('Firefox/'))
-        title.innerText+=' '+icon
-      ;
+      title.innerText='-_- '+(icon||'');
 
       document.head.append(style);
       document.head.append(meta);
       document.head.append(title);
     }else{
-     return background={css,color,icon}
+      return background={css,color,icon}
     }
   }(typeof document!=='undefined')
-//- valid pug and user script
+//- valid pug and user javascript code
